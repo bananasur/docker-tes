@@ -33,3 +33,4 @@ jobs:
         username: ubuntu
         port: 22
         script: cd /home/ubuntu/docker-tes && git pull origin main && sudo docker compose up
+        
