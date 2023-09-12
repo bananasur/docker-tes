@@ -27,4 +27,4 @@ jobs:
 
     - name: Deploy to Server using Docker Compose
       run: |
-        ssh -i ${{ secrets.SSH_PRIVATE_KEY }} ubuntu@43.218.137.88 "cd /home/ubuntu/doocker-test && docker compose up"
+        ssh -i ${{ secrets.SSH_PRIVATE_KEY }} ubuntu@43.218.137.88 "cd /home/ubuntu/docker-test && docker compose up"
