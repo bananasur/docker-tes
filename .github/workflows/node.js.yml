@@ -25,6 +25,9 @@ jobs:
     - name: Build
       run: npm run build
 
+    - name: Change Permission of SSH Key
+      run: chmod 600 /.github/sshkey.pem
+
     - name: Deploy to Server using Docker Compose
       run: |
         ssh -i /.github/sshkey.pem ubuntu@43.218.137.88 "cd /home/ubuntu/docker-test && docker compose up"
