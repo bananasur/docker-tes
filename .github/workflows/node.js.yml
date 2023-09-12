@@ -32,4 +32,4 @@ jobs:
         host: 43.218.131.183
         username: ubuntu
         port: 22
-        script: cd /home/ubuntu/docker-tes && git pull origin main && docker compose up
+        script: cd /home/ubuntu/docker-tes && git pull origin main && sudo docker compose up
