@@ -25,9 +25,6 @@ jobs:
     - name: Build
       run: npm run build
 
-    - name: Build Docker image
-      run: docker build -t MBCcoins .
-
     - name: Deploy to Server using Docker Compose
       run: |
         ssh ubuntu@43.218.137.88 "cd /home/ubuntu/doocker-test && docker-compose pull && docker-compose up -d"
