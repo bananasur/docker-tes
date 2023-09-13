@@ -13,6 +13,9 @@ COPY . .
 # Build your Next.js app
 RUN yarn build
 
+EXPOSE 3000
+
+EXPOSE 8080
 
 # Start your app (in production mode)
 CMD ["yarn", "start"]
