@@ -19,38 +19,16 @@ jobs:
       with:
         node-version: 18.x
 
-    - name: Install dependencies
-      run: npm ci
-
-    - name: Build
-      run: npm run build
-
     - name: Stop and Remove Previous Docker Container
       uses: appleboy/ssh-action@v1.0.0
       with:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
-        host: 10.0.2.15
+        host: 43.218.39.95
         username: ubuntu
         port: 22
-        script: sudo docker stop docker-tes-app-1 && sudo docker rm docker-tes-app-1 || true
-    
-    
-    - name: Stop and Remove Previous Docker Images
-      uses: appleboy/ssh-action@v1.0.0
-      with:
-        key: ${{ secrets.SSH_PRIVATE_KEY }}
-        host: 10.0.2.15
-        username: ubuntu
-        port: 22
-        script: sudo docker rmi docker-tes-app
-
-    - name: Deploy to Server using Docker Compose
-      uses: appleboy/ssh-action@v1.0.0
-      with:
-        key: ${{ secrets.SSH_PRIVATE_KEY }}
-        host: 10.0.2.15
-        username: ubuntu
-        port: 22
-        script: cd /home/ubuntu/docker-tes && git pull origin main && sudo docker compose up
-        
-        
+        script: |
+          sudo docker stop docker-tes-app-1 
+          sudo docker rm docker-tes-app-1 
+          sudo docker rmi docker-tes-app
+          cd /home/ubuntu/docker-tes && git pull origin main && sudo docker compose up
+ 
