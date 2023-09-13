@@ -14,7 +14,7 @@ const Team = () => {
       <section className='agency bg-top' ref={bagiancs}>
         <div className='container'>
           <div className='heading-title'>
-            <TitleSm title='MEET CYBERSECURITY TEAM' /> <br />
+            <TitleSm title='MEET THE CYBERSECURITY TEAM' /> <br />
             <br />
             <TitleLogo caption="A team of smart & passionate creatives" className="title-bg" />
           </div>
