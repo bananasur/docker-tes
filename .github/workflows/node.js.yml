@@ -29,7 +29,7 @@ jobs:
       uses: appleboy/ssh-action@v1.0.0
       with:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
-        host: 108.136.54.66
+        host: 10.0.2.15
         username: ubuntu
         port: 22
         script: sudo docker stop docker-tes-app-1 && sudo docker rm docker-tes-app-1 || true
@@ -39,7 +39,7 @@ jobs:
       uses: appleboy/ssh-action@v1.0.0
       with:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
-        host: 108.136.54.66
+        host: 10.0.2.15
         username: ubuntu
         port: 22
         script: sudo docker rmi docker-tes-app
@@ -48,7 +48,7 @@ jobs:
       uses: appleboy/ssh-action@v1.0.0
       with:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
-        host: 108.136.54.66
+        host: 10.0.2.15
         username: ubuntu
         port: 22
         script: cd /home/ubuntu/docker-tes && git pull origin main && sudo docker compose up
