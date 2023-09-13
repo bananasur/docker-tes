@@ -31,5 +31,5 @@ jobs:
           sudo docker stop docker-tes-app-1 
           sudo docker rm docker-tes-app-1 
           sudo docker rmi docker-tes-app
-          cd /home/ubuntu/docker-tes && git pull origin main && sudo docker compose up
+          cd /home/MBCcoin/docker-tes && git pull origin main && sudo docker compose up
  
